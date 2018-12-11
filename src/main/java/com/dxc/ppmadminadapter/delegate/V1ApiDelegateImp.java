@@ -8,8 +8,6 @@ import java.util.List;
 
 @Component
 public class V1ApiDelegateImp implements V1ApiDelegate {
-
-
     @Override
     public ResponseEntity<List<String>> checkDeletedProfiles(List<String> patientIds) {
         return null;
