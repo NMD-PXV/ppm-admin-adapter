@@ -18,9 +18,9 @@ paths:
       description: "check deleted"
       operationId: "checkDeletedProfiles"
       consumes:
-      - "text/plain"
+      - "application/json; text/plain; charset=utf-8"
       produces:
-      - "text/plain"
+      - "application/json; text/plain; charset=utf-8"
       parameters:
       - in: "body"
         name: "patientIds"
@@ -41,3 +41,39 @@ paths:
           description: "Invalid input"
         500:
           description: "Internal server error"
+
+  v1/admin/patients:
+    post:
+      tags:
+      - "admin"
+      summary: "add patients"
+      description: "add patients by list of id patients"
+      operationId: "addPatientProfiles"
+      consumes:
+      - "application/json; text/plain; charset=utf-8"
+      produces:
+      - "application/json; text/plain; charset=utf-8"
+      parameters:
+      - in: "body"
+        name: "patientIds"
+        required: true
+        description: "list id of patient profiles"
+        schema:
+          type: "array"
+          items:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              type: "string"
+        400:
+          description: "Invalid input"
+        500:
+          description: "Internal server error"
+
+
+
+
