@@ -23,4 +23,9 @@ public class V1ApiDelegateImp implements V1ApiDelegate {
     public ResponseEntity<List<String>> checkDeletedProfiles(List<String> patientIds) {
         return ResponseEntity.ok(adminService.checkDeletedProfiles(patientIds));
     }
+
+    @Override
+    public ResponseEntity<String> deletePatientProfiles(List<String> patientIds) {
+        return ResponseEntity.ok(adminService.deletePatientProfiles(patientIds));
+    }
 }

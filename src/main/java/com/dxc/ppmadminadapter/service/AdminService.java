@@ -40,10 +40,24 @@ public class AdminService {
             patientRepository.saveAndFlush(patient);
         }
         return patientIds;
-
-//        List<String> ids = patientRepository.findPatientId(patientIds);
-//        if(ids.isEmpty())
-//            throw new AdminException(PATIENT_NOT_FOUND);
-//        return patientRepository.findPatientId(patientIds);
     }
+
+    public String deletePatientProfiles(List<String> patientIds) {
+        StringBuffer buffer = new StringBuffer();
+       for(String id :patientIds) {
+           Patient patient = patientRepository.findByPatientId(id);
+           if(patient != null) {
+               patient.setDeleted(true);
+               patientRepository.save(patient);
+               buffer.append(patient.getPatientId());
+               buffer.append(": deleted \n");
+           } else {
+               buffer.append(id);
+               buffer.append(": not found \n");
+           }
+       }
+       return buffer.toString();
+    }
+
+
 }

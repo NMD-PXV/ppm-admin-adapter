@@ -14,5 +14,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select p.patientId from Patient p where p.patientId in :patientIds and p.deleted = false")
     List<String> findPatientIds(@Param("patientIds") List<String> patientIds);
 
+    Patient findByPatientId (String id);
+
 
 }
