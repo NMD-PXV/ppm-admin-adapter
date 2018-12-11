@@ -19,6 +19,9 @@ public class AdminService {
     private PatientRepository patientRepository;
 
     public List<String> checkDeletedProfiles(List<String> patientIds) {
+        List<String> ids = patientRepository.findPatientIds(patientIds);
+        if(ids.isEmpty())
+            throw new AdminException(PATIENT_NOT_FOUND);
         return patientRepository.findPatientIds(patientIds);
     }
 
@@ -58,6 +61,4 @@ public class AdminService {
        }
        return buffer.toString();
     }
-
-
 }
