@@ -1,13 +1,13 @@
-package com.dxc.ppmadminadapter.common;
+package com.dxc.ppm.patientadapter.common;
 
 import org.springframework.http.HttpStatus;
 
-public enum AdminStorageError {
+public enum PatientStorageError {
     PATIENT_NOT_FOUND(0, HttpStatus.NOT_FOUND);
     private final int code;
     private final HttpStatus httpStatus;
 
-    AdminStorageError(int code, HttpStatus httpStatus) {
+    PatientStorageError(int code, HttpStatus httpStatus) {
         this.code = code;
         this.httpStatus = httpStatus;
     }

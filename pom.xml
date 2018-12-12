@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dxc</groupId>
-	<artifactId>ppm-admin-adapter</artifactId>
+	<artifactId>ppm-patient-adapter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>ppm-admin-adapter</name>
+	<name>ppm-patient-adapter</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

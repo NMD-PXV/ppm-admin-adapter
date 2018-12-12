@@ -1,4 +1,4 @@
-package com.dxc.ppmadminadapter.model;
+package com.dxc.ppm.patientadapter.model;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.dxc.ppmadminadapter;
+package com.dxc.ppm.patientadapter;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

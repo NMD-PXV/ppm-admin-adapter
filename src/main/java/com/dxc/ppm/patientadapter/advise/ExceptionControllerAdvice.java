@@ -1,16 +1,14 @@
-package com.dxc.ppmadminadapter.advise;
+package com.dxc.ppm.patientadapter.advise;
 
-import com.dxc.ppmadminadapter.exception.AdminException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import org.springframework.http.HttpStatus;
+import com.dxc.ppm.patientadapter.exception.PatientException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class ExceptionControllerAdvice {
-    @ExceptionHandler(AdminException.class)
-    public ResponseEntity<String> personalInfoExceptionHandle(AdminException ex) {
+    @ExceptionHandler(PatientException.class)
+    public ResponseEntity<String> personalInfoExceptionHandle(PatientException ex) {
         String message = ex.getResponse().name();
         return new ResponseEntity<>(message, ex.getResponse().getHttpStatus());
     }

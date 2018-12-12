@@ -1,19 +1,17 @@
-package com.dxc.ppmadminadapter.service;
+package com.dxc.ppm.patientadapter.service;
 
 
-import com.dxc.ppmadminadapter.model.Patient;
-import com.dxc.ppmadminadapter.common.AdminStorageError;
-import com.dxc.ppmadminadapter.exception.AdminException;
-import com.dxc.ppmadminadapter.repository.PatientRepository;
+import com.dxc.ppm.patientadapter.common.PatientStorageError;
+import com.dxc.ppm.patientadapter.exception.PatientException;
+import com.dxc.ppm.patientadapter.model.Patient;
+import com.dxc.ppm.patientadapter.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.dxc.ppmadminadapter.common.AdminStorageError.PATIENT_NOT_FOUND;
-
 @Service
-public class AdminService {
+public class PatientService {
 
     @Autowired
     private PatientRepository patientRepository;
@@ -21,7 +19,7 @@ public class AdminService {
     public List<String> checkDeletedProfiles(List<String> patientIds) {
         List<String> ids = patientRepository.findPatientIds(patientIds);
         if(ids.isEmpty())
-            throw new AdminException(PATIENT_NOT_FOUND);
+            throw new PatientException(PatientStorageError.PATIENT_NOT_FOUND);
         return patientRepository.findPatientIds(patientIds);
     }
 

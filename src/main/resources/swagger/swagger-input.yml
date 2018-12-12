@@ -1,19 +1,19 @@
 swagger: "2.0"
 info:
-  description: "PPM Admin Adapter"
+  description: "PPM Patient Adapter"
   version: "1.0.0"
-  title: "PPM Admin Adapter"
+  title: "PPM Patient Adapter"
 tags:
 - name: "admin"
-  description: "Everything about admin adapter"
+  description: "Everything about patient"
 schemes:
 - "https"
 - "http"
 paths:
-  v1/admin/profiles:
+  v1/profiles:
     post:
       tags:
-      - "admin"
+      - "patient"
       summary: "check deleted profiles"
       description: "check deleted"
       operationId: "checkDeletedProfiles"
@@ -42,10 +42,10 @@ paths:
         500:
           description: "Internal server error"
 
-  v1/admin/patients:
+  v1/patients:
     post:
       tags:
-      - "admin"
+      - "patient"
       summary: "add patients"
       description: "add patients by list of id patients"
       operationId: "addPatientProfiles"
@@ -76,7 +76,7 @@ paths:
 
     delete:
       tags:
-      - "admin"
+      - "patient"
       summary: "delete patients"
       description: "delete patiens by ids of patients"
       operationId: "deletePatientProfiles"
@@ -100,6 +100,3 @@ paths:
           description: "Invalid input"
         500:
           description: "Internal server error"
-
-
-
