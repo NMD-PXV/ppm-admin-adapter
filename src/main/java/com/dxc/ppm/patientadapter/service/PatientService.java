@@ -17,9 +17,9 @@ public class PatientService {
     private PatientRepository patientRepository;
 
     public List<String> checkDeletedProfiles(List<String> patientIds) {
+        if(patientIds.isEmpty())
+            return patientIds;
         List<String> ids = patientRepository.findPatientIds(patientIds);
-        if(ids.isEmpty())
-            throw new PatientException(PatientStorageError.PATIENT_NOT_FOUND);
         return patientRepository.findPatientIds(patientIds);
     }
 
